@@ -6,6 +6,7 @@ import ShowGrid from '../components/show/ShowGrid';
 import { apiGet } from '../misc/config';
 import { useLastQuery } from '../misc/custom-hooks';
 import { RadioInputsWrapper, SearchButtonWrapper, SearchInput } from './Home.styled';
+import { LoadingWrapper } from './Starred.styled';
 
 
 const Home = () => {
@@ -33,7 +34,7 @@ const Home = () => {
 
   const renderResults = () =>{
     if(results && results.length===0){
-      return <div>No Results</div>
+      return <LoadingWrapper>No Results</LoadingWrapper>
     }
     if(results && results.length>0){
       return results[0].show 
